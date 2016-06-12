@@ -4,6 +4,8 @@ By HX for Reference Number  16-067
 
 The repo contains code for portfolio optimization and portfolio performance modeling. See files for specific comments.
 
+&nbsp;
+
 #basic_requirements
 There must be a data directory containing a csv file with the tickers of assets that is been optimized. The name of the csv file must be in _name_\_assets.csv where italics is the name of the dataset. If the csv file has multiple columns and rows, the ticker names must be in the first column.
 
@@ -48,3 +50,4 @@ This repo is a work in progress, possible future tasks:
 - Additional example scripts
 - Black-Litterman model
 - Refactor to classes if desired
+- Upload graphics, chart functions
