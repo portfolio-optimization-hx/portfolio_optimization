@@ -14,18 +14,17 @@
 %  work-in-progress. 
 
 % settings
-data_dname = 'data';
-data_dname = 'misc\portfolio_optimization\data';
-dataset_name = 'djia';
+data_dname      = 'data';
+dataset_name    = 'djia';
 
-train_sdate = '1986/01/01'; % yyyy/mm/dd train start date
-train_edate = '1995/12/31'; % yyyy/mm/dd train end date
+train_sdate     = '1986/01/01'; % yyyy/mm/dd train start date
+train_edate     = '1995/12/31'; % yyyy/mm/dd train end date
 
-validate_sdate = '1996/01/01'; % yyyy/mm/dd validate / cross-validate start date
-validate_edate = '2005/12/31'; % yyyy/mm/dd validate / cross-validate end date
+validate_sdate  = '1996/01/01'; % yyyy/mm/dd validate / cross-validate start date
+validate_edate  = '2005/12/31'; % yyyy/mm/dd validate / cross-validate end date
 
-test_sdate = '2006/01/01'; % yyyy/mm/dd test start date
-test_edate = '2015/12/31'; % yyyy/mm/dd test end date
+test_sdate      = '2006/01/01'; % yyyy/mm/dd test start date
+test_edate      = '2015/12/31'; % yyyy/mm/dd test end date
 % settings
 
 %% setup
