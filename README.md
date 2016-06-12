@@ -2,7 +2,7 @@
 Portfolio Optimization in MATLAB
 By HX for Reference Number  16-067
 
-The repo contains code for portfolio optimization and portfolio performance modeling. See files for specific comments.
+The repo contains code for portfolio optimization and portfolio performance modelling. See files for specific comments.
 
 &nbsp;
 
