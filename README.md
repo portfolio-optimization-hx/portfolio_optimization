@@ -36,6 +36,11 @@ These are results from running first model in `example_script_01.m` in chart for
 
 &nbsp;
 
+# miscellaneous
+The data directory also contains a file `data/interest_rates.mat` that contains the risk free rate matrix. The columns are formatted as `[CAD 3-Month T-Bill Rate, CAD Savings Account Rate, US 3-Month T-Bill Rate, US Savings Account Rate]`.
+
+&nbsp;
+
 # disclaimer
 This is an experimental codebase, do not use in production settings.
 
