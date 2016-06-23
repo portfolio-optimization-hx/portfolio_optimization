@@ -1,6 +1,6 @@
 # portfolio_optimization
 Portfolio Optimization in MATLAB
-By HX for Reference Number  16-067
+By HX for Reference Number  16-067 - 2870
 
 The repo contains code for portfolio optimization and portfolio performance modelling. See files for specific comments.
 
@@ -30,9 +30,9 @@ __Portfolio Modeling__: `mean_cvar_optimization` or `mean_variance_optimization`
 # sample_results
 These are results from running first model in `example_script_01.m` in chart form
 
-![Efficient Frontier and Efficient Portfolios](/images/1-1.png)
+![Efficient Frontier and Efficient Portfolios](/images/1-11.png)
 
-![Portfolio Performance](/images/1-3.png)
+![Portfolio Performance](/images/1-31.png)
 
 &nbsp;
 
@@ -54,5 +54,6 @@ This repo is a work in progress, possible future tasks:
 - Better comments
 - Additional example scripts
 - Black-Litterman model
+- Add transaction cost, slippage
 - Refactor to classes if desired
 - Upload graphics, chart functions
