@@ -91,7 +91,7 @@ end
 
 %% mean-variance portfolio optimization
 drange    = train_drange;
-ret_linma = price_to_ma_return(asdata,drange,'linear'); % linear mean annual return
+ret_linma = price_to_ma_return(asdata,drange,'linear','daily'); % linear mean annual return
 ret_covm  = price_to_covmatrix(asdata,drange); % return covariance matrix
 wpa_min   = 0.00; % weight per asset max
 wpa_max   = 0.10; % weight per asset min
@@ -150,7 +150,7 @@ ret_linma = zeros(1,asdata.count); % allocate mean annual return matrix
 ret_covm  = zeros(asdata.count); % allocate covariance matrix matrix
 fprintf('Calculating multi-period returns and covariance matrix.\n');
 for i1 = 1:numel(sday)
-    ret_linma = ret_linma + price_to_ma_return(asdata,[sday(i1) eday],'linear'); % calculate and sum mean annual return for date range
+    ret_linma = ret_linma + price_to_ma_return(asdata,[sday(i1) eday],'linear','daily'); % calculate and sum mean annual return for date range
     ret_covm  = ret_covm  + price_to_covmatrix(asdata,[sday(i1) eday]); % calculate and sum covariance matrix for date range
 end
 
@@ -210,7 +210,7 @@ wpa_max     = 0.10; % weight per asset min
 samp_count  = 1000; % number of return samples
 
 rng(0); % seed rng generator for return sampling
-ret_linma   = price_to_ma_return(asdata,train_drange,'linear'); % linear mean annual return
+ret_linma   = price_to_ma_return(asdata,train_drange,'linear','daily'); % linear mean annual return
 ret_sample  = price_to_retsample(asdata,train_drange,samp_count,'linear'); % return covariance matrix
 
 % when asset does not contain price data for the period replace NaN
