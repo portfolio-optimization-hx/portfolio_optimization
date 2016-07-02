@@ -77,6 +77,15 @@ else
     end
 end
 
+% remove assets that has no data / has not started trading in the
+% optimization / training date range
+r_time       = (asdata.timestamp >= train_drange(1)) & (asdata.timestamp <= train_drange(2)); % row of relevant time
+c_valid      = sum(asdata.price_adjusted(r_time,:)~=0,1) ~= 0; % column of valid data
+asdata.count = sum(c_valid);
+asdata.name  = asdata.name(c_valid);
+asdata.price = asdata.price(:,c_valid);
+asdata.price_adjusted = asdata.price_adjusted(:,c_valid);
+
 % check if interest / risk-free rate data, else create zero return irdata
 if exist(irdata_fpath,'file')
     irdata = load(irdata_fpath);
