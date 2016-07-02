@@ -5,7 +5,7 @@ function mean_average_return = price_to_ma_return(asdata,date_range,varargin)
     % simply doing yearly can have incomplete data
     % varargin options:
     %   function:   linear, log (default linear)
-    %   time frame: daily, weekly, monthly, yearly (default daily)
+    %   time frame: yearly, daily, weekly, monthly (default yearly)
         
     % verify date range
     if ~isnumeric(date_range) || numel(date_range) < 2
@@ -18,7 +18,8 @@ function mean_average_return = price_to_ma_return(asdata,date_range,varargin)
     % option choose higher option
     varargin    = varargin(cellfun(@(c) (ischar(c)),varargin));
     lin_log     = max([1 find(ismember({'linear','log'},varargin))]); 
-    base_time   = max([1 find(ismember({'daily','weekly','monthly','yearly'},varargin))]);    
+    base_time   = {'yearly','daily','weekly','monthly'};
+    base_time   = base_time{max([1 find(ismember(base_time,varargin))])};
     
     mean_average_return = zeros(1,asdata.count);
     for i1 = 1:asdata.count
@@ -31,22 +32,22 @@ function mean_average_return = price_to_ma_return(asdata,date_range,varargin)
         % mdpp: minimum days per period, to remove non-standard data anomalies
         % aopy: average occurence per year, for annualization
         switch base_time
-            case 1 % daily                
-                idx1 = timepricea(:,1);
-                mdpp = 1;
-                aopy = 252; % average 252 trading days per year
-            case 2 % weekly
-                idx1 = weeknum(timepricea(:,1));
-                mdpp = 3;
-                aopy = 52; % 52 weeks per year
-            case 3 % monthly
-                idx1 = month(timepricea(:,1));
-                mdpp = 19;
-                aopy = 12; % 12 month per year
-            case 4 % yearly
+            case 'yearly'
                 idx1 = year(timepricea(:,1));
                 mdpp = 248;
                 aopy = 1; % 1 year per year
+            case 'daily'
+                idx1 = timepricea(:,1);
+                mdpp = 1;
+                aopy = 252; % average 252 trading days per year
+            case 'weekly'
+                idx1 = weeknum(timepricea(:,1));
+                mdpp = 3;
+                aopy = 52; % 52 weeks per year
+            case 'monthly'
+                idx1 = month(timepricea(:,1));
+                mdpp = 19;
+                aopy = 12; % 12 month per year
         end
         
         idx1 = find(idx1(2:end) ~= idx1(1:end-1));
