@@ -17,6 +17,7 @@ function [eff_frontier,eff_weights] = mean_cvar_optimization(ret_linma,ret_sampl
 
     % eff_frontier     = (0.01:0.005:1.00)'; % test larger range for long and short
     eff_frontier    = [min(ret_linma):0.01:max(ret_linma) max(ret_linma)]';
+    eff_frontier    = eff_frontier((eff_frontier > 0) & (eff_frontier <= 2)); % limit return range
     eff_frontier    = [zeros(size(eff_frontier,1),1) eff_frontier zeros(size(eff_frontier,1),1) ];
     eff_weights     = zeros(size(eff_frontier,1),assets_count);
 
