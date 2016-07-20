@@ -11,7 +11,7 @@ There must be a data directory containing a csv file with the tickers of assets 
 
 Example ticker files for the Dow Jones, S&P 500, and the TSX are provided: `data/djia_assets.csv`, `data/sp500_assets.csv`, `data/sptsx_assets.csv`
 
-If there is any issue download or creating an asdata file, an example is available in the data directory. Run command:
+If there is any issue downloading or creating an asdata file, an example is available in the data directory. Run command:
 ```
 copyfile('data/djia_asdata_example.mat','data/djia_asdata.mat');
 ```
